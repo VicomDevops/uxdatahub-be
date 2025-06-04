@@ -15,4 +15,4 @@ RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/lo
 WORKDIR /var/www/uxdatahub
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install
