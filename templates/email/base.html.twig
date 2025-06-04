@@ -1,0 +1,40 @@
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+    <title>Insight Data</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <style type="text/css">
+        * {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body style="padding:0; margin:0; background: white; ">
+<div style="width: 95%; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #000; ">
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; ">
+        <img style="height:90px; width: 180px;" src="https://zupimages.net/up/21/25/8hw4.png" alt="insight" />
+    </div>
+    <div style="background: #f6f6f6; width: 70%; display: flex;  padding: 2rem 2.5rem; flex-direction: column; margin-bottom: 3rem;">
+        <div style="margin-bottom: 1.3rem;">
+            <span style="font-weight: 600;font-size: 24px;">Bonjour {{ name | capitalize }},</span>
+        </div>
+        {% block body %}
+        {% endblock %}
+        <div style="margin: 1rem 0;">
+            <span style="font-weight: 400;font-size: 16px; color: #002C3F;">A très vite,</span>
+            <br />
+            <span style="font-weight: 400;font-size: 16px; color: #002C3F;">L'équipe Insight Data.</span>
+        </div>
+
+        <hr style="width: 97%; border: .5px solid #000;">
+
+        <div style="display:flex;justify-content: center;align-items: center;">
+            <span style="font-weight: 400;font-size: 10px;">INSIGHT DATA - 10 RUE JEAN MACE - 75011 PARIS |  contact_insightdata@labsoft.fr</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

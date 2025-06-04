@@ -1,0 +1,28 @@
+{% extends 'email/base.html.twig' %}
+
+{% block body %}
+    <div style="margin-bottom:  1rem;">
+        <span style="font-weight: 400;font-size: 16px;color: #002C3F;">{{ name | capitalize }} vous a ajouté au sein de sa base de testeurs. </span>
+    </div>
+
+    <div>
+        <div style="font-weight: 400;font-size: 16px;color: #002C3F;margin-bottom:  1rem; ">Voici les informations pour vous connecter :</div>
+        <div style="font-weight: 400;font-size: 16px;color: #002C3F;margin-bottom:  1rem;">User : {{ username }}</div>
+        <div style="font-weight: 400;font-size: 16px;color: #002C3F;margin-bottom:  1rem;">Mot de passe : {{ password }}</div>
+        {#<div style="font-weight: 400;font-size: 16px;color: #002C3F;margin-bottom:  1rem;">Statut actuel : Testeur non confirmé</div>#}
+    </div>
+
+    <div style="margin-bottom:  1rem;">
+        <span style="font-weight: 400;font-size: 16px;color: #002C3F;margin-bottom:  1rem;">
+            Nous reviedrons vers vous prochainement afin de participer à un test utilisateur !
+        </span>
+    </div>
+
+
+    <div style="margin-bottom:  1rem;">
+        <div style="background: #00A359; height: 40px; width: 30%;text-align:center; border-radius: 5px;display:flex;justify-content: center;align-items: center;">
+            <a href="https://prex.insightdata.fr/login" style="color:#fff; font-size: 12px; margin: auto;text-decoration: none; font-weight :700;">Découvrir</a>
+        </div>
+    </div>
+{% endblock %}
+

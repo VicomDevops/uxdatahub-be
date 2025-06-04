@@ -1,0 +1,43 @@
+security:
+    enable_authenticator_manager: true
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        login:
+            pattern: ^/api/login
+            stateless: true
+            json_login:
+                check_path: /api/login_check
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        api:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
+            logout:
+                path: app_logout
+                target: /
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/api/login_check, roles: PUBLIC_ACCESS }
+        - { path: ^/api/offline/reset/password, roles: PUBLIC_ACCESS }
+        - { path: ^/api/offline/reset/password/temp, roles: PUBLIC_ACCESS }
+        - { path: ^/api/user/new_password, roles: PUBLIC_ACCESS }
+        - { path: ^/api/user/registered, roles: PUBLIC_ACCESS }
+        - { path: ^/api/verify/user/email, roles: PUBLIC_ACCESS }
+        - { path: ^/api/signup-client, roles: PUBLIC_ACCESS }
+        - { path: ^/api/signup-tester, roles: PUBLIC_ACCESS }
+        - { path: ^/api/clients/confirm/client/account, roles: PUBLIC_ACCESS }
+        - { path: ^/api/admins, roles: ROLE_ADMIN }
+        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }

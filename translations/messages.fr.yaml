@@ -1,0 +1,114 @@
+general:
+    success: Opération effectuée avec succès !
+    exception: Erreur de traitement des données.
+    500: Une erreur est survenue merci de réessayer plus tard
+    session_expired: Votre session a expiré, veuillez vous reconnecter à nouveau
+    params: Les paramètres soumis sont incorrects
+    forbidden: Erreur ! Vous n'avez pas la permission pour accéder à cette ressource.
+    failed : Operation echoue !
+    invalid_credentials : Utilisateur ou mot de passe invalide !
+users:
+    not_found : Utilisateur non existant !
+    active_account : Vous devez valider votre compte en cliquant sur le lien dans votre boîte mail.Si vous ne confirmez pas votre compte d'ici NUMBER Jours, votre inscription sera annulée.
+    active_account_success : Votre compte a été activé avec succès !
+password:
+    reset_success: Votre mot de passe a été réinitialisé avec succès
+    password_regex : Le mot de passe doit être de 10 caractères minimum
+    confirm_password : mots de passe n'est pas identiques
+    not_correct: Le mot de passe est incorrect !
+email:
+    success: Un lien vous a été envoyé à cette adresse email. Consultez votre boîte mail ainsi que vos spams pour réinitialiser votre mot de passe.
+    fail: Email non envoyé ou adresse introuvable !
+file:
+    not_exist : Fichier introuvable !
+    not_supported_format : Format de fichier non supporter !
+google_nl :
+    score_magnitude : Erreur l'hors de la traitement de score et de magnitude !
+    googlenl_text_error : Erreur , text vide !
+steps:
+    success_add: Etapes ajoutées avec succès !
+    not_found: Etapes non existant !
+scenario:
+    success_add: Scenario ajoutées avec succès !
+    not_found: Scenario non existant !
+    forbidden: Vous n\'avez pas le droit de création de scénario !
+    success_lunch: Scenario lanceés avec succès !
+    special_char : Ce champs ne peut pas contenir de caractères spéciaux !
+    already_exist : Ce scénario existe déjà !
+    empty : Le scénario ne peut pas étre vide ou ne contient pas que des espaces !
+    panel_assign : Le scenario SCENARIO a été associé au panel PANEL avec succès !
+    scenario_pause : Le scenario SCENARIO a été mis en pause avec succès !
+    scenario_play : Le scenario SCENARIO a été mis en Play avec succès !
+    scenario_not_play : Pas des scenarios en cours !
+test:
+    submitted: Reponses envoyé avec succés
+    start: Test demarré avec succès !
+    already_start: Test déja en cour !
+    success_add: Test ajoutées avec succès !
+    not_found: Test non existant !
+    forbidden: Vous n\'avez pas le droit de création de Test !
+    already_sumitted: il faut confirmer le test ou vous avez dejà envoyé une réponse !
+    already_tested: Test deja analysé !
+responses:
+    not_found: Reponse non existant !
+    already_exist: Vous avez déja repondre a cette question !
+video:
+    error: Erreur lhors de l'upload de video !
+admin:
+    admin_not_found: Admin non existant !
+    subclient_not_found: Sous-client non existant !
+    client_validation_success : Client valider avec succeé .
+    client_already_validated : Client déja Valider !
+    client_not_found: Client non existant !
+    tester_validation_success: Testeur valider avec succeé .
+    tester_already_validated: Testeur déja Valider !
+    tester_not_found: Client non existant !
+panel:
+    testers_empty: Erreur ! Veillez ajouter des testeurs au panel
+    success_add: Panel ajoutés avec succès !
+    success_create: Panel créér avec succès !
+    success_update: Panel mis a jour avec succès !
+    success_deleted: Panel supprimé avec succès !
+    not_found: Pas de panels !
+    cannot_be_deleted: Le panneau ne peut pas être supprimé, il est associé à des scénarios en cours d'exécution ou terminer !
+    enclose_error: Pour cloturé un scenario il faut que au moins un testeur qui a passé un test !
+    success_enclose: Scenarios cloturé avec succès!
+mail:
+    valid: l'email est valide !
+    not_valid : Le compte existe dejà, il faut utiliser un autre adresse ou cliquer sur mot de passe oublié
+client_tester:
+    not_found: Testeur non existant !
+    deleted: Testeur supprimé avec succès !
+    updated: Testeur mis a jour avec succès !
+    added: Testeur ajouter avec succès !
+client:
+    token_or_client_not_fount: Compte Client déja confirmeé !
+notification:
+    not_found: Notification non existant !
+answer:
+    not_found: Réponses au test non existant !
+
+audit_ux_flash :
+    entity_description : En un maximum de 52 mots, fournissez une description précise de cette entité ENTITY . (Domaine d'activité WORKFIELD) (Langue Français)
+    entity_adventages : En 25 mots maximum, énoncez les avantages concurrentiels de cette entité ENTITY . (Domaine d'activité WORKFIELD) Repondre par 'Ses avantages concurrentiels ...........' (Langue Français)
+    main_entity_note : Note le UX de ENTITY (Domaine d'activité WORKFIELD) , repondre par un chiffre max 10 " ?? "
+    entity_strong_points : En 30 mots maximum, quelles sont les cinq principales qualités de la conception du site ENTITY (Domaine d'activité WORKFIELD) (repondre avec des numero 1 , 2, 3, 4, et 5). (Langue Français)
+    entity_weak_points : En 30 mots maximum, quels sont les cinq principaux défauts de la conception du site ENTITY (Domaine d'activité WORKFIELD) (repondre avec des numero 1 , 2, 3, 4, et 5). (Langue Français)
+    entity_brief_recommendations : En un maximum de 100 mots chacune, quelles sont les trois principales recommandations succinctes pour le design du site ENTITY (repondre par titre et recommandation qui commence seulement avec des numero 1 , 2, et 3 ). (Domaine d'activité WORKFIELD) (Langue Français)
+    entity_zoom_on_the_competitors_title : En 2 mots maximum, définissez cette entité ENTITY (Domaine d'activité WORKFIELD). (Langue Français)
+    entity_zoom_on_the_competitors : En 40 mots maximum, donnez-moi les avantages des produits de COMPETITION par rapport a ENTITY . (Domaine d'activité WORKFIELD) (Langue Français)
+    entity_note_the_competitors : En un maximum de deux chiffres. , Note le UX de ENTITY (Domaine d'activité WORKFIELD), repondre par un chiffre max 10 " ?? "
+    entity_images : Générez une image basée sur ce site ENTITY (Domaine d'activité WORKFIELD).
+
+ux_audit_alldata_flash :
+    alldata_flash : Donnez-moi les Top 5 des préconisations. Répondez en suivant cette forme => 1. Préconisations = ????? • Étape = ? (numero detape seulement) • Citations = ??? . (répondez avec la réponse du testeur (son nom complet et la première lettre de son prénom)) • Nombre d'utilisateurs = ?? utilisateurs ont remonté ce problème. • Argument = ??
+
+targeted_recommendations :
+          writing_assessment : En au moins 54 mots, donne-moi un plan pour la rédaction. ( Quels problèmes ont été fréquemment évoqués ? et Quelles entités nécessitent des améliorations spécifiques ?) des utilisateurs consernant les reponses  ENTITY , (repondre avec une paragraphe en francais qui commence par 'Les réactions des utilisateurs sont ...'
+          analyse_score : En min 54 mots , Peux-tu analyser les retours des utilisateurs sur l'expérience de navigation ENTITY ?
+          most_remarquable_feedback : En min 15 mots ,Peux-tu identifier le constat principale issus de retour de testeur ENTITY ?
+          which_most_remarquable : En forme des numeros ( 0, 1, 2 , 3 , 4 etc ...) ,Peux-tu me donnée les numéros des constats est le plus remarquable ENTITY (repondre avec  0, 1 , 2 , 3 etc ...)?
+
+concrete_recommendations :
+    which_quick_wins: Les Top 5 Quick Wins (repondre que par les adresses e-mails et les numéros d'étape et Nombre d'utilisateurs ont remonté ce problème ) de ENTITY (total de 5 entrées) (repondre toujours sous cette forme  1. example@????.com, Étape x, x utilisateurs).
+    quick_wins_recommendations: Peux-tu me donner le préconisation ENTITY . Répondez en suivant cette forme => 1. Préconisations = ????? • Argument = ??

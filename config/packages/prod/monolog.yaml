@@ -1,0 +1,197 @@
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            action_level: error
+            handler: nested
+            excluded_http_codes: [404, 405]
+            buffer_size: 50 # How many messages should be saved? Prevent memory leaks
+
+        nested:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+
+        console:
+            type: console
+            process_psr_3_messages: false
+            channels: ["!event", "!doctrine"]
+
+        login:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/login.log"
+            level: debug
+            max_files: 60
+            channels: [ "login" ]
+        admin:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/admin.log"
+            level: debug
+            max_files: 60
+            channels: [ "admin" ]
+
+        analyze:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/analyze.log"
+            level: debug
+            max_files: 60
+            channels: [ "analyze" ]
+
+        client:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/client.log"
+            level: debug
+            max_files: 60
+            channels: [ "client" ]
+
+        client_Tester:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/clientTester.log"
+            level: debug
+            max_files: 60
+            channels: [ "clientTester" ]
+
+        comment:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/comment.log"
+            level: debug
+            max_files: 60
+            channels: [ "comment" ]
+
+        contract:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/contract.log"
+            level: debug
+            max_files: 60
+            channels: [ "contract" ]
+
+        face_recognition:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/faceRecognition.log"
+            level: debug
+            max_files: 60
+            channels: [ "faceRecognition" ]
+
+        google_analyze:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/googleAnalyze.log"
+            level: debug
+            max_files: 60
+            channels: [ "googleAnalyze" ]
+
+        help:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/help.log"
+            level: debug
+            max_files: 60
+            channels: [ "help" ]
+
+        licence_type:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/licenceType.log"
+            level: debug
+            max_files: 60
+            channels: [ "licenceType" ]
+
+        messanger:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/messanger.log"
+            level: debug
+            max_files: 60
+            channels: [ "messanger" ]
+
+        order:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/order.log"
+            level: debug
+            max_files: 60
+            channels: [ "order" ]
+
+        panel_analyze:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/panelAnalyze.log"
+            level: debug
+            max_files: 60
+            channels: [ "panelAnalyze" ]
+
+        panel:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/panel.log"
+            level: debug
+            max_files: 60
+            channels: [ "panel" ]
+
+        question_choices:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/questionChoices.log"
+            level: debug
+            max_files: 60
+            channels: [ "questionChoices" ]
+
+        register:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/register.log"
+            level: debug
+            max_files: 60
+            channels: [ "register" ]
+
+        scenario:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/scenario.log"
+            level: debug
+            max_files: 60
+            channels: [ "scenario" ]
+
+        statistics:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/statistics.log"
+            level: debug
+            max_files: 60
+            channels: [ "statistics" ]
+
+        step:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/step.log"
+            level: debug
+            max_files: 60
+            channels: [ "step" ]
+
+        sub_client:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/subClient.log"
+            level: debug
+            max_files: 60
+            channels: [ "subClient" ]
+
+        test:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/test.log"
+            level: debug
+            max_files: 60
+            channels: [ "test" ]
+
+        tester:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/Tester.log"
+            level: debug
+            max_files: 60
+            channels: [ "tester" ]
+
+        user:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/user.log"
+            level: debug
+            max_files: 60
+            channels: [ "user" ]
+        passwords:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/passwords.log"
+            level: debug
+            max_files: 60
+            channels: [ "resetPasswords" ]
+        googleApis:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%/googleApis.log"
+            level: debug
+            max_files: 60
+            channels: [ "googleApis" ]

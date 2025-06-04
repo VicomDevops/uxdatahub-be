@@ -1,0 +1,6 @@
+# app/config/config.yml (Symfony without Flex)
+# config/packages/firebase.yaml (Symfony with Flex)
+kreait_firebase:
+  projects:
+    my_project:
+      credentials: '%env(GOOGLE_APPLICATION_CREDENTIALS_PATH)%'
