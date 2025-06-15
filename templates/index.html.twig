@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue!{% endblock %}
+
+{% block body %}
+<h1>Taches Echouees</h1>
+    <ul>
+        {% for job in jobs %}
+        <li>
+{#            {{ dump(job) }}#}
+            <h2>
+                {{ dump(job.title) }}
+            </h2>
+            <pre>
+                {{ job.trace }}
+            </pre>
+            <form action="{{ path('delete',{id: job.id}) }}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn btn-danger">Supprimer</button>
+            </form>
+            <form action="{{ path('retry' ,{id: job.id}) }}" method="post" >
+                <button class="btn btn-secondary">Relancer</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

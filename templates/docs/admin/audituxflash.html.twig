@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit UX Flash</title>
+    <style>
+        .audit-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .left-container {
+            display: flex;
+            width: auto; /* Left-side content will take 60% of the width */
+        }
+
+        .green-bar {
+            width: 50px;
+            background-color: #009688;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .green-bar .vertical-text {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .content-container {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        h1 {
+            color: #009688;
+        }
+
+        .client-info {
+            margin-top: 20px;
+        }
+
+        .client-info p {
+            margin-bottom: 5px;
+        }
+
+        .ux-score {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .ux-score p {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .score-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #e1ffe0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #009688;
+            font-size: 18px;
+            color: #009688;
+        }
+
+        .main-content {
+            margin-top: 20px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .strengths, .improvements {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .strengths {
+            background-color: #e8f5e9;
+        }
+
+        .improvements {
+            background-color: #ffebee;
+        }
+
+        .strengths h2, .improvements h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .strengths ul, .improvements ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .strengths li, .improvements li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .right-container {
+            width: auto; /* Right-side content takes 40% of the width */
+            padding: 20px;
+        }
+        .main-image img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .recommendations {
+            background-color: #f0f4c3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .recommendations h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .recommendations ol {
+            padding-left: 20px;
+        }
+
+        .recommendations li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .competitor-analysis {
+            background-color: #e1f5fe;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .competitor-analysis h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .competitor {
+            margin-bottom: 20px;
+        }
+
+        .competitor p {
+            font-size: 14px;
+        }
+
+        .ux-note {
+            float: right;
+            font-weight: bold;
+            color: #009688;
+        }
+
+    </style>
+</head>
+<body>
+<div class="audit-container">
+    <!-- Left Side: Audit Flash -->
+    <div class="left-container">
+        <div class="green-bar">
+            <span class="vertical-text">Audit Flash</span>
+        </div>
+
+        <div class="content-container">
+            <div class="header">
+                <img src="https://i.postimg.cc/6QG19mH0/logo-vector.png" alt="Insight Data Logo" class="logo">
+                <h1>Audit UX Flash</h1>
+            </div>
+
+            <div class="client-info">
+                <p><strong>Client :</strong> Courbet [30 septembre 2024]</p>
+                <p><strong>Scenario Test :</strong> Page Garde</p>
+                <p><strong>URL :</strong> <a href="https://www.courbet.com">https://www.courbet.com</a></p>
+            </div>
+
+            <div class="ux-score">
+                <p>Note UX :</p>
+                <div class="score-circle">
+                    <span>7,5 / 10</span>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <p class="description">
+                    Les bijoux en diamants de synthèse éthiques et en or recyclé, offrant une alternative durable à la joaillerie traditionnelle. Courbet est une maison de joaillerie française spécialisée dans ce domaine.
+                    Ses avantages concurrentiels incluent un engagement fort envers l'écologie et l'innovation, tout en maintenant des standards élevés de qualité et de design.
+                </p>
+
+                <div class="strengths">
+                    <h2>Points forts :</h2>
+                    <ul>
+                        <li>Esthétique soignée et cohérence visuelle.</li>
+                        <li>Navigation claire et intuitive.</li>
+                        <li>Correspondance adéquate entre le langage du site et celui des utilisateurs.</li>
+                    </ul>
+                </div>
+
+                <div class="improvements">
+                    <h2>Points à améliorer :</h2>
+                    <ul>
+                        <li>Ajouter des boutons de retour visibles sur certaines pages.</li>
+                        <li>Messages d'erreur et de confirmation plus explicites.</li>
+                        <li>Simplifier le design pour une meilleure lisibilité.</li>
+                        <li>Raccourcis pour utilisateurs réguliers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side: Recommendations and Competitor Analysis -->
+    <div class="right-container">
+        <div class="main-image">
+            <img src="https://i.postimg.cc/wML3kgTr/Screenshot-from-2024-10-16-16-00-02.png" alt="Courbet Page Garde">
+        </div>
+
+        <div class="recommendations">
+            <h2>Recommandations succinctes (3)</h2>
+            <ol>
+                <li>Page d'accueil : Le visuel principal avec des animations pourrait être simplifié pour réduire les distractions et permettre aux utilisateurs de mieux se concentrer sur les produits phares.</li>
+                <li>Catalogue de produits : Les descriptions sous les produits sont petites et parfois cachées sous plusieurs clics. Elles pourraient être directement visibles pour améliorer l'accessibilité de l'information.</li>
+                <li>Fiche produit : Réduire le nombre d'éléments décoratifs autour des images des produits pour que l'utilisateur se concentre mieux sur l'article lui-même.</li>
+            </ol>
+        </div>
+
+        <div class="competitor-analysis">
+            <h2>Zoom sur la concurrence</h2>
+            <div class="competitor">
+                <p><strong>Boucheron</strong> <span class="ux-note">Note UX 7,5 / 10</span></p>
+                <p>Haute Joaillerie : Boucheron propose une gamme de haute joaillerie plus étendue et plus prestigieuse, avec des pièces emblématiques et des collections patrimoniales.</p>
+            </div>
+            <div class="competitor">
+                <p><strong>Messika</strong> <span class="ux-note">Note UX 7 / 10</span></p>
+                <p>Diamants mobiles : La signature "Move" de Messika, avec des diamants en mouvement, offre une innovation de design unique que Courbet ne propose pas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+services:
+  nginx:
+    container_name: uxdatahub-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    volumes:
+      - ./:/var/www/uxdatahub
+    ports:
+      - 8088:80
+    networks:
+      uxdatahub-data:
+        ipv4_address: 172.20.0.2
+    depends_on:
+      - php
+
+  php:
+    container_name: uxdatahub-php
+    build:
+      context: .
+      dockerfile: Dockerfile-php
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/uxdatahub?serverVersion=11&charset=utf8
+    volumes:
+      - ./:/var/www/uxdatahub
+    networks:
+      uxdatahub-data:
+        ipv4_address: 172.20.0.3
+    depends_on:
+      - db
+
+  db:
+    container_name: uxdatahub-db
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: uxdatahub
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      uxdatahub-data:
+        ipv4_address: 172.20.0.4
+
+  pgadmin:
+    container_name: uxdatahub-pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      uxdatahub-data:
+        ipv4_address: 172.20.0.5
+
+volumes:
+  db-data:
+  pgadmin-data:
+
+networks:
+  uxdatahub-data:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

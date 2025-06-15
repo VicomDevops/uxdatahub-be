@@ -1,0 +1,58 @@
+name: Build & Push Symfony Backend
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  IMAGE_NAME_PHP: vicomdockerhub/uxdatahub-be-php
+  IMAGE_NAME_NGINX: vicomdockerhub/uxdatahub-be-nginx
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: uxdatahub
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push PHP (Symfony backend) image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile-php
+          push: true
+          tags: ${{ env.IMAGE_NAME_PHP }}:latest
+
+      - name: Build and push Nginx image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile-nginx
+          push: true
+          tags: ${{ env.IMAGE_NAME_NGINX }}:latest

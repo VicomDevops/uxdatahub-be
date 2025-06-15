@@ -1,0 +1,44 @@
+# Build insight-data-back project.
+
+
+# Trigger whenever we have a new commit on develop branch
+trigger:
+- develop
+
+# Use insight-data privatez pool agent
+pool: Default
+
+variables:
+  phpVersion: 7.2
+
+# build project
+steps:
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'SonarQube_service'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'insightdata_insightdata_AYmIL1qRWut7CXKcbg_W'
+    cliProjectName: 'insightdata'
+    cliSources: '.'
+
+- script: |
+    sudo update-alternatives --set php /usr/bin/php$(phpVersion)
+    sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
+    sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
+    sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
+    sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+    php -version
+  displayName: 'Use PHP version $(phpVersion)'
+
+- script: composer install --no-interaction --prefer-dist
+  displayName: 'composer install'
+
+- task: SonarQubeAnalyze@5
+  inputs:
+    jdkversion: 'JAVA_HOME'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(system.defaultWorkingDirectory)'
+    artifactName: 'insight_data_backend'

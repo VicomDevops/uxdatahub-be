@@ -1,0 +1,6 @@
+monolog:
+  channels: ['login','admin','analyze','client','clientTester','comment','contract','faceRecognition',
+             'googleAnalyze','help','licenceType','messanger','order','panelAnalyze','panel',
+             'questionChoices','register','scenario','statistics','step','subClient','test','tester',
+             'user', 'resetPasswords', 'googleApis','schedulerNotifications','interruptedTests','submitfacerecognition'
+            ]
