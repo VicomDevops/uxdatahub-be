@@ -6,8 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME_PHP: vicomdockerhub/uxdatahub-be-php
-  IMAGE_NAME_NGINX: vicomdockerhub/uxdatahub-be-nginx
+  IMAGE_NAME_PHP: vicomdockerhub/uxdatahub-be
 
 jobs:
   build:
@@ -41,18 +40,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push PHP (Symfony backend) image
+      - name: Build and push Symfony PHP-FPM image
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: Dockerfile-php
+          file: Dockerfile
           push: true
           tags: ${{ env.IMAGE_NAME_PHP }}:latest
-
-      - name: Build and push Nginx image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: Dockerfile-nginx
-          push: true
-          tags: ${{ env.IMAGE_NAME_NGINX }}:latest
