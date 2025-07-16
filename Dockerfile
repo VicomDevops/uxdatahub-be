@@ -15,4 +15,6 @@ COPY . .
 
 RUN composer install
 
-CMD ["php-fpm"]
+CMD ["php", "-S", "0.0.0.0:9001", "-t", "public"]
+
+EXPOSE 9001

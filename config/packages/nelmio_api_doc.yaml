@@ -1,7 +1,7 @@
 nelmio_api_doc:
     documentation:
         info:
-            title: Insight Data
+            title: uxdatahub
             description: API description
             version: 1.0.0
     areas: # to filter documented areas
