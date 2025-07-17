@@ -15,6 +15,8 @@ COPY . .
 
 RUN composer install
 
+RUN php bin/console lexik:jwt:generate-keypair
+
 CMD ["php", "-S", "0.0.0.0:9001", "-t", "public"]
 
 EXPOSE 9001
