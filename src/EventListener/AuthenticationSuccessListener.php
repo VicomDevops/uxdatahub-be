@@ -42,10 +42,10 @@ class AuthenticationSuccessListener
         $this->paramsHelper->setLogger($this->loginLogger);
         $this->paramsHelper->flushInputWithLogger();
         $user = $this->userRepository->findOneBy(['id' => $event->getUser()]);
-        if ($user instanceof Client && !$user->getIsVerified())
-        {
-            return $this->countDownRemainingDays($user,$event);
-        }
+        // if ($user instanceof Client && !$user->getIsVerified())
+        // {
+        //     return $this->countDownRemainingDays($user,$event);
+        // }
         $session_id = explode(".", $event->getData()['token']);
         if (!$session = $this->sessionRepository->findOneBy(["user" => $user]))
         {
